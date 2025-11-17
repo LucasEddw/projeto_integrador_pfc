@@ -1,0 +1,51 @@
+async function usuarioCadastrar() {
+    let usuario = new Usuario(
+        '',
+        document.getElementById('card-name-input').value,
+        document.getElementById('card-email-input').value,
+        document.getElementById('card-password-input').value
+    );
+    if (await cadastrar(usuario)) {
+        alert("Usuário cadastrado com êxito!");
+        window.location.href = window.location.href.replace('cadastrar', 'entrar');
+    } else {
+        alert("Falha ao cadastrar! Tente novamente.");
+    }
+}
+
+
+
+async function usuarioEntrar() {
+    let usuario = new Usuario(
+        '',
+        '',
+        document.getElementById('card-email-input').value,
+        document.getElementById('card-password-input').value
+    );
+    if (await entrar(usuario)) {
+        // document.getElementById("user_name").innerText = usuario.nome;
+        // document.getElementById("user_email").innerText = usuario.email;
+        console.log(usuario);
+        alert("Usuário entrado com êxito!");
+        window.location.href = window.location.href.replace('entrar', 'leitor');
+    } else {
+        alert("Falha ao entrar! Tente novamente.");
+    }
+}
+
+async function postarComentario() {
+    let comentario = new Comentario(
+        '',
+        '',
+        document.getElementById('comment_input').value,
+        '0',
+        usuario.id
+    );
+    if (await bdComentario(comentario)) {
+        alert("Usuário entrado com êxito!");
+        window.location.href = window.location.href.replace('entrar', 'leitor');
+    } else {
+        alert("Falha ao entrar! Tente novamente.");
+    }
+}
+

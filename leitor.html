@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/leitor.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+    <script src="assets/javascript/database/bancodados/conexao.js"></script>
+    <script src="assets/javascript/database/getUser.js"></script>
+    <script src="assets/javascript/database/modelo/comentario.js"></script>
+    <script src="assets/javascript/database/modelo/usuario.js"></script>
+    <script src="assets/javascript/database/formUser.js"></script>
+
+    <title>Anima - INOS</title>
+</head>
+
+<body>
+
+    <section id="livreto_full_screen" class="livreto-fullscren">
+        <div class="livreto-paging">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span class="livreto-page-counter">Pg. 1 / 3</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="livreto-page-functions-box">
+                <span id="livreto_full_screen_exit_btn">voltar</span>
+            </div>
+        </div>
+        <img class="livreto-paginas" id="livretoPaginas" src="#" alt="Livreto">
+    </section>
+
+    <section class="livreto-info">
+        <a class="livreto-home-link" href="index.html">
+            <h1 class="livreto-home-logo">Anima - INOS</h1>
+        </a>
+
+        <div class="account-root" id="account_root">
+
+        </div>
+
+        <div class="livreto-info-box">
+            <h1 class="livreto-title title-blue">Podcast: Conexão Futura</h1>
+            <h2 class="livreto-subtitle">Wifi 6 - A Revolução na Sua Conexão</h2>
+            <span class="livreto-volume">Volume I</span>
+            <span class="livreto-sinopse-title">Sinopse</span>
+            <p class="livreto-sinopse-text text-dark">Neste Livreto Ilustrado sobre Wi-fi 6, iremos ter um dialogo entre
+                dois personagens. Sendo eles Leo o entusiasta tech e Ana a co-apresentadora, eles estarão conduzindo um
+                podcast, onde será explicado sobre o Wi-Fi 6. Venha, leia e Descubra!</p>
+        </div>
+    </section>
+    <section class="livreto">
+        <div class="livreto-paging">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span class="livreto-page-counter">Pg. 1 / 3</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="livreto-page-functions-box">
+                <span id="align_scroll" class="livreto-page-func-roll">Alinhar Rolagem</span>
+                <span id="full_screen" class="livreto-page-func-roll">Tela Cheia
+                </span>
+            </div>
+        </div>
+        <img class="livreto-paginas" id="livretoPaginas" src="#" alt="Livreto">
+    </section>
+    <section class="comments-section">
+
+        <h1 class="title-blue comments-title">Comentários</h1>
+
+        <div class="comments-box">
+            <div class="comments" id="comments">
+
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="#" alt="foto-de-perfil">
+                        <div>
+                            <strong>Sérgio Ricardo Ferrazolli</strong>
+                            <span>Postado há 2 dias</span>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, obcaecati rem nobis
+                            consequatur ex temporibus quibusdam quis sequi commodi ab! Maiores ullam voluptatum
+                            recusandae quas officia ad! Temporibus ut sint iste, sapiente molestiae accusantium, qui
+                            nobis repudiandae quis magni vitae placeat itaque laboriosam consectetur at tempore nulla
+                            aspernatur quo ipsam?</p>
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                            <span>123</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="#" alt="foto-de-perfil">
+                        <div>
+                            <strong>Sérgio Ricardo Ferrazolli</strong>
+                            <span>Postado há 2 dias</span>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur numquam magnam
+                            magni facere ullam at architecto ducimus quia sed?</p>
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                            <span>123</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user">
+                        <img src="#" alt="foto-de-perfil">
+                        <div>
+                            <strong>Sérgio Ricardo Ferrazolli</strong>
+                            <span>Postado há 2 dias</span>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, soluta.</p>
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                            <span>123</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <input class="comment-input" type="text" name="comment_input" id="comment_input"
+                placeholder="Digite Aqui...">
+            <button class="comment-send-btn" onclick="postarComentario()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+    </section>
+    <div id="footer-root"></div>
+
+    <div id="render_react_components"></div>
+
+
+
+    <script src="assets/javascript/components/footer.js" type="text/babel"></script>
+    <!-- <script src="assets/javascript/components/renderReactComponents.js" type="text/babel"></script> -->
+    <script src="assets/javascript/components/userCard.js" type="text/babel"></script>
+    <script src="assets/javascript/utilidades/leitorFunc.js"></script>
+    <script>
+        async function logout() {
+            let supabase = await getSupabaseClient();
+
+            const { error } = await supabase.auth.signOut();
+            if (error) {
+                console.error('Erro ao deslogar:', error.message);
+            } else {
+                console.log('Usuário deslogado com sucesso!');
+            }
+        }
+        // setTimeout(logout(), 3000)
+
+    </script>
+</body>
+
+</html>

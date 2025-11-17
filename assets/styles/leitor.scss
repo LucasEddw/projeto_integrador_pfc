@@ -1,0 +1,293 @@
+.livreto-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(var(--body-margin-y) + 0px) var(--body-margin-x) var(--body-margin-y) var(--body-margin-x);
+
+    .livreto-home-link {
+        position: absolute;
+        left: 112px;
+        top: 47.5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .livreto-home-logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--azul-205295);
+        }
+    }
+
+    .account-root {
+        position: absolute;
+        right: 112px;
+        top: 47.5px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--azul-205295);
+
+        a {
+            color: var(--azul-205295);
+        }
+    }
+
+    .livreto-info-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .livreto-subtitle {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 30px;
+            color: var(--azul-205295);
+        }
+
+        .livreto-volume {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: var(--azul-205295);
+            margin: 5px 0 15px 0;
+        }
+
+        .livreto-sinopse-title {
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            color: var(--azul-205295);
+            text-align: justify;
+        }
+
+        .livreto-sinopse-text {
+            max-width: 700px;
+        }
+    }
+}
+
+
+
+
+$page-width: 500px;
+$page-height: 693px;
+$page-size: 0.8;
+$page-size-fullscren: 1;
+
+.livreto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--azul-060E1A);
+
+    .livreto-paging {
+        background: var(--azul-144272);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-white);
+        padding: 6px;
+        font-size: 18px;
+        box-shadow:
+            0 -25px 0 rgb(255, 255, 255),
+            0 calc($page-height * $page-size + 39px) 20px rgba(0, 0, 0, 0.25),
+            0 0 20px rgba(0, 0, 0, 0.25);
+        z-index: 10;
+
+        .livreto-page-functions-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            position: absolute;
+            font-size: 14px;
+            left: 112px;
+            font-weight: 500;
+
+            &>* {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .livreto-paginas {
+        width: calc($page-width * $page-size);
+        height: calc($page-height * $page-size);
+        background: #888;
+    }
+}
+
+.livreto-fullscren {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+
+    .livreto-paging {
+        background: #1e1e1e;
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-white);
+        padding: 6px;
+        font-size: 18px;
+        box-shadow:
+            0 -25px 0 rgb(255, 255, 255),
+            0 calc($page-height * $page-size + 39px) 20px rgba(0, 0, 0, 0.25),
+            0 0 20px rgba(0, 0, 0, 0.25);
+
+        .livreto-page-functions-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            position: absolute;
+            font-size: 14px;
+            left: 112px;
+            font-weight: 500;
+
+            &>* {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .livreto-paginas {
+        width: $page-width;
+        height: calc(100vh - 39px);
+        background: #888;
+    }
+}
+
+.comments-section {
+    background: #ffffff;
+    width: 100%;
+    padding: var(--body-margin-y) var(--body-margin-x) calc(var(--body-margin-y) + 2vw) var(--body-margin-x);
+    z-index: 100;
+
+    .comments-title {
+        margin-bottom: 24px;
+    }
+
+    .comments-box {
+        border-top: 4px solid var(--azul-205295);
+        width: 100%;
+        background: var(--azul-10-205295);
+        position: relative;
+
+        .comments {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .comment-input {
+            width: 100%;
+            border-top: 5px solid var(--azul-20-205295) !important;
+            background: transparent;
+            border: none;
+            padding: 20px 23px;
+            outline: none;
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+        }
+
+        .comment-send-btn {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 7.5px;
+            right: 7.5px;
+            font-size: 20px;
+            font-weight: 900;
+            border: none;
+            outline: none;
+            background: var(--azul-205295);
+            color: #ffffff;
+            transition: 0.3s;
+
+            &:hover {
+                scale: 1.1;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--text-dark-dark);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: var(--text-dark-dark);
+    text-align: justify;
+    gap: 15px;
+    width: 100%;
+
+    .comment-user {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+
+        img {
+            width: 40px;
+            height: 40px;
+            background: #888;
+            border-radius: 50%;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+            line-height: 20px;
+        }
+
+    }
+
+    .comment-content {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 90%;
+        gap: 40px;
+
+        p {
+            width: 100%;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
