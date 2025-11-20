@@ -63,8 +63,8 @@ const UserCard = () => {
 
   React.useEffect(() => {
     let usuarioSeguro = typeof usuario !== "undefined" ? usuario : null;
-    console.log(usuarioSeguro)
-    console.log(usuarioLogado);
+    // console.log(usuarioSeguro)
+    // console.log(usuarioLogado);
     if (usuarioLogado) {
       setConteudoConta(
         <div id="navbar-account-box" className="true-account">

@@ -120,6 +120,7 @@ $page-size-fullscren: 1;
         width: calc($page-width * $page-size);
         height: calc($page-height * $page-size);
         background: #888;
+            cursor: pointer;
     }
 }
 
@@ -167,9 +168,14 @@ $page-size-fullscren: 1;
     }
 
     .livreto-paginas {
-        width: $page-width;
+        width: auto;
         height: calc(100vh - 39px);
         background: #888;
+            cursor: pointer;
+    }
+
+    .pular-pagina-direita{
+
     }
 }
 

@@ -33,7 +33,7 @@ async function usuarioEntrar() {
     }
 }
 
-async function postarComentario() {
+async function postarComentarioForm() {
     let comentario = new Comentario(
         '',
         '',
@@ -41,11 +41,26 @@ async function postarComentario() {
         '0',
         usuario.id
     );
-    if (await bdComentario(comentario)) {
-        alert("Usuário entrado com êxito!");
-        window.location.href = window.location.href.replace('entrar', 'leitor');
+    if (await postarComentario(comentario)) {
+        alert("Comentário postado com êxito!");
+        window.location.href = window.location.href.replace('leitor', 'leitor');
     } else {
-        alert("Falha ao entrar! Tente novamente.");
+        alert("Falha ao Comentar! Tente novamente.");
     }
 }
 
+async function darLikeForm() {
+    let comentario = new Comentario(
+        '',
+        '',
+        document.getElementById('comment_input').value,
+        '0',
+        usuario.id
+    );
+    if (await postarComentario(comentario)) {
+        alert("Comentário postado com êxito!");
+        window.location.href = window.location.href.replace('leitor', 'leitor');
+    } else {
+        alert("Falha ao Comentar! Tente novamente.");
+    }
+}

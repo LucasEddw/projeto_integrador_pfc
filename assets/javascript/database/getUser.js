@@ -17,7 +17,7 @@ async function getUser() {
       .eq('id', data?.user?.id)
     usuario = dataFetchUser[0];
     window.usuario = usuario;
-    console.log(usuario);
+    // console.log(usuario);
 
     return errorFetchUser == null && usuario !== undefined;
 

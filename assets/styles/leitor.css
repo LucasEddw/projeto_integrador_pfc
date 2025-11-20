@@ -96,6 +96,7 @@
   width: 400px;
   height: 554.4px;
   background: #888;
+  cursor: pointer;
 }
 
 .livreto-fullscren {
@@ -135,11 +136,11 @@
   cursor: pointer;
 }
 .livreto-fullscren .livreto-paginas {
-  width: 500px;
+  width: auto;
   height: calc(100vh - 39px);
   background: #888;
+  cursor: pointer;
 }
-
 .comments-section {
   background: #ffffff;
   width: 100%;

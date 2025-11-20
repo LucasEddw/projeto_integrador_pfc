@@ -1,33 +1,21 @@
+let comentarioBox;
 
-async function cadastrar(usuario) {
-    console.log(usuario);
+async function postarComentario(comentario) {
 
     try {
         let supabase = await getSupabaseClient()
-        const { data, error } = await supabase.auth.signUp({
-            email: usuario.email,
-            password: usuario.senha,
-        });
+        const { error } = await supabase
+            .from('comentario')
+            .insert({
+                texto: comentario.texto,
+                curtidas: comentario.curtidas,
+                id_usuario: comentario.id_usuario
+            })
 
         if (error) {
-            throw new Error('Email ou senha inválidos!');
+            throw new Error('Comentário Inválido!');
         }
-
-        usuario.id = data?.user?.id;
-        if (error == null && usuario.id?.length > 0) {
-            const { status: statusUser, data: dataUser, error: errorUser } = await supabase
-                .from('usuario')
-                .upsert(
-                    {
-                        'id': usuario.id,
-                        'nome': usuario.nome,
-                        'email': usuario.email,
-                        'senha': usuario.senha
-                    }
-                )
-                .select();
-            return error == null && errorUser == null;
-        }
+        return error == null;
     }
     catch (error) {
         console.error(new Error(`Erro ao tentar cadastrar conta: ${error.message}`));
@@ -36,30 +24,87 @@ async function cadastrar(usuario) {
 
 
 
-async function entrar(usuario) {
+function criarComentarioElemento(comentario) {
+    let comentarioCard = document.createElement('div');
+    comentarioCard.classList.add('comment');
+
+    let comentarioUser = document.createElement('div');
+    comentarioUser.classList.add('comment-user');
+    
+    let comentarioUserPfp = document.createElement('img');
+    comentarioUserPfp.src = '#';
+    comentarioUserPfp.alt = 'foto-de-perfil';
+    comentarioUser.appendChild(comentarioUserPfp);
+
+    let comentarioUserInfo = document.createElement('div')
+
+    let comentarioUserName = document.createElement('p');
+    comentarioUserName.innerText = comentario.usuario.nome;
+    let comentarioUserDate = document.createElement('span');
+    comentarioUserDate.innerText = comentario.data_do_comentario.substring(0, 10).replaceAll('-', '/');
+    comentarioUserInfo.appendChild(comentarioUserName);
+    comentarioUserInfo.appendChild(comentarioUserDate);
+
+
+    let comentarioContent = document.createElement('div');
+    comentarioContent.classList.add('comment-content');
+
+    let comentarioContentTexto = document.createElement('p');
+    comentarioContentTexto.innerText = comentario.texto;
+    
+    let comentarioContentLike = document.createElement('div');
+
+    let comentarioContentLikeIcon = document.createElement('i');
+    comentarioContentLikeIcon.classList.add('fa-regular');
+    comentarioContentLikeIcon.classList.add('fa-heart');
+    
+    let comentarioContentLikeCount = document.createElement('span');
+    comentarioContentLikeCount.innerText = comentario.curtidas;
+    
+    comentarioContentLike.appendChild(comentarioContentLikeIcon);
+    comentarioContentLike.appendChild(comentarioContentLikeCount);
+    comentarioContent.appendChild(comentarioContentTexto);
+    comentarioContent.appendChild(comentarioContentLike);
+    comentarioUser.appendChild(comentarioUserPfp);
+    comentarioUser.appendChild(comentarioUserInfo);
+    comentarioCard.appendChild(comentarioUser);
+    comentarioCard.appendChild(comentarioContent);
+
+    return comentarioCard;
+}
+
+
+
+async function buscarComentario() {
 
     try {
         let supabase = await getSupabaseClient()
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email: usuario.email.trim(),
-            password: usuario.senha,
-        })
+
+
+
+        const { data, error } = await supabase
+            .from('comentario')
+            .select(`
+                id,
+                data_do_comentario,
+                texto,
+                curtidas,
+                usuario: id_usuario (
+                    id,
+                    nome
+                )
+            `);
 
         if (error) {
-            throw new Error('Email ou senha inválidos!');
+            throw new Error('Erro pra buscar comentário!');
         }
 
-        usuario.id = data?.user?.id;
-        const { data: dataUser, error: errorUser } = await supabase
-            .from('usuario')
-            .select()
-            .eq('id', usuario.id)
 
-        // if (errorUser) {
-        //     throw new Error('Problema ao referenciar usuário!');
-        // }
+        data.forEach(comentario => {
+            comentarioBox.appendChild(criarComentarioElemento(comentario));
+        });
 
-        return error == null && errorUser == null;
+        return error == null;
 
     }
     catch (error) {
@@ -68,4 +113,8 @@ async function entrar(usuario) {
 
 }
 
-exports = {cadastrar, entrar};
+window.onload = (e) => {
+    comentarioBox = document.getElementById("comments");
+    buscarComentario();
+}
+exports = { postarComentario };
