@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  <title>Anima - INOS</title>
+
+  <script src="assets/javascript/database/bancodados/conexao.js"></script>
+  <script src="assets/javascript/database/modelo/usuario.js"></script>
+  <script src="assets/javascript/database/bancodados/bdUsuario.js"></script>
+  <script src="assets/javascript/database/formUser.js"></script>
+
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/entrar.css">
+
+  <style>
+    .card-btn-entrar {
+      margin: 30px 0 0 0 !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <a class="btn-voltar" href="index.html">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Voltar</span>
+  </a>
+
+  <form class="card">
+    <div class="card-box-content">
+      <h1 class="card-title title-blue">Cadastrar</h1>
+
+      <div class="card-input-box">
+        <div class="card-input-field">
+          <label class="card-input-label" for="card-name-input">
+            <span class="card-label-text">Nome</span>
+          </label>
+          <input required class="card-input" id="card-name-input" type="text">
+        </div>
+        <div class="card-input-field">
+          <label class="card-input-label" for="card-email-input">
+            <span class="card-label-text">Email</span>
+          </label>
+          <input required class="card-input" id="card-email-input" type="email">
+        </div>
+        <div class="card-input-field">
+          <label class="card-input-label" for="card-password-input">
+            <span class="card-label-text">Senha</span>
+          </label>
+          <input required class="card-input" id="card-password-input" type="password">
+        </div>
+      </div>
+
+
+      <input id="cardBtnCadastrar" class="card-btn-entrar" type="button" value="Cadastrar" onclick="usuarioCadastrar()">
+
+      <span class="card-text">Já possuí uma conta? <a href="entrar.html">Entrar</a></span>
+    </div>
+  </form>
+
+
+
+
+  <script>
+
+    const inputs = document.querySelectorAll(".card-input");
+
+    inputs.forEach((input) => {
+      input.addEventListener("keyup", () => {
+        if (input.value != "") {
+          input.previousElementSibling.children[0].classList.add("card-label-text-active");
+        } else {
+          input.previousElementSibling.children[0].classList.remove("card-label-text-active");
+        }
+      })
+    })
+
+  </script>
+
+</body>
+
+</html>

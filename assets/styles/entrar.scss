@@ -1,0 +1,174 @@
+body {
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-voltar {
+    background: var(--azul-205295);
+    color: #ffffff;
+    padding: 10px 30px 10px 23px;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--text-white);
+    text-align: center;
+    transition: 0.3s;
+    position: absolute;
+    left: 70px;
+    top: 35px;
+
+    &:hover i {
+        width: 21px;
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    i {
+        width: 0px;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    span {
+        margin: 5px;
+    }
+}
+
+.card {
+    background: #ffffff;
+    width: 400px;
+    padding: 50px;
+    transform: scale(1);
+
+    .card-box-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .card-title {
+            margin: 20px 0 20px 0;
+        }
+
+        .card-input-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+
+            .card-input-field {
+                position: relative;
+                border: none;
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    background: var(--azul-205295);
+                }
+
+                &:focus-within .card-input-label .card-label-text {
+                    top: 10px !important;
+                    font-size: 16px !important;
+                    font-weight: 500 !important;
+                    letter-spacing: 0.5px !important;
+                    color: var(--text-dark) !important;
+                    margin: 0 !important;
+                    transition: 0.3s !important;
+                }
+
+
+                .card-input-label {
+
+                    .card-label-text-active {
+                    top: 10px !important;
+                    font-size: 16px !important;
+                    font-weight: 500 !important;
+                    letter-spacing: 0.5px !important;
+                    color: var(--text-dark) !important;
+                    margin: 0 !important;
+                    transition: 0.3s !important;
+                    }
+
+                    .card-label-text {
+                        display: flex;
+                        position: relative;
+                        top: 42px;
+                        z-index: 10;
+                        font-size: 18px;
+                        font-weight: 500;
+                        letter-spacing: 0.5px;
+                        color: var(--text-dark);
+                        margin: 0 0 0 20px;
+                        transition: 0.3s;
+                        height: 25px;
+                        cursor: text;
+                    }
+                }
+
+                .card-input {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    outline: none;
+                    height: 60px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
+                    color: var(--text-dark);
+                    padding: 0 20px;
+                    border: none;
+                }
+            }
+        }
+
+        a {
+            color: var(--azul-27A8EF);
+            text-decoration: underline;
+        }
+
+        .card-text-fp {
+            width: 100%;
+            text-align: start;
+            margin: 13px 0 0 0;
+            font-size: 14px;
+        }
+
+        .card-btn-entrar {
+            margin: 13px 0 0 0;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            background: var(--azul-205295);
+            font-weight: 500;
+            font-size: 20px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+                transition: 0.3s;
+
+            &:hover {
+                transition: 0.3s;
+                scale: 1.05;
+                cursor: pointer;
+            }
+        }
+
+        .card-text {
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+            text-align: center;
+            margin: 20px 0 0 0;
+        }
+    }
+}

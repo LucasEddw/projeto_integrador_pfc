@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/inicio.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+ 
+    <script src="assets/javascript/database/bancodados/conexao.js" ></script>
+    <script src="assets/javascript/database/getUser.js"></script>
+    
+
+    <title>Anima - INOS</title>
+</head>
+
+<body>
+
+
+
+    <section id="inicio">
+
+        <div id="navbar-root"></div>
+        <div id="banner-box">
+
+            <h1 id="banner-title">Anima - INOS</h1>
+            <p id="banner-text">Projeto de pesquisa do IFPR para o <br> compartilhamento de conhecimentos técnicos <br>
+                por meio
+                de livretos.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section-shadow" id="projeto">
+
+        <div id="projeto-box">
+
+            <div id="projeto-text-box">
+                <h1 class="title-blue" id="projeto-title">Projeto de Pesquisa</h1>
+                <p class="text-dark" id="projeto-text">Anima-INOS é um projeto de pesquisa, produzido para ser avaliado
+                    como um Projeto de
+                    Conclusão de Curso. O projeto busca produzir alguns livretos com o tema principal sendo Redes de
+                    Computadores. Cada livreto conterá um assunto específico que é envolvido com a disciplina de Redes
+                    de
+                    Computadores. Assim tornando o conhecimento sobre tais assuntos abordados acessível.</p>
+            </div>
+            <div id="projeto-img-box">
+                <img id="projeto-img" src="#" alt="personagem_desenhando">
+                <span id="projeto-img-text">Arte por Lucas Eduardo</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="livreto">
+
+        <div id="livreto-box">
+
+            <h1 class="title-white" id="livreto-title">Leia Agora!</h1>
+            <div id="livreto-content-box">
+
+                <h1 class="subtitle-white" id="livreto-subtitle">Livreto Ilustrado sobre Wi-Fi 6</h1>
+                <p class="text-white" id="livreto-text">Neste Livreto Ilustrado sobre Wi-fi 6, iremos ter um dialogo
+                    entre dois
+                    personagens. Sendo eles Leo o entusiasta tech e Ana a co-apresentadora, eles estarão conduzindo um
+                    podcast, onde será explicado sobre o Wi-Fi 6. Venha, leia e Descubra!</p>
+                <div id="livreto-action-box">
+
+                    <a id="livreto-action-btn" target="_self" href="leitor.html">Ver Mais</a>
+                    <div id="livreto-interact-box">
+
+                        <div class="livreto-interact-btn">
+
+                            <span>123</span>
+                            <i class="fa-regular fa-eye"></i>
+
+                        </div>
+                        <div class="livreto-interact-btn">
+
+                            <span>123</span>
+                            <i class="fa-regular fa-thumbs-up"></i>
+
+                        </div>
+                        <div class="livreto-interact-btn">
+
+                            <span>123</span>
+                            <i class="fa-regular fa-comment"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="section-shadow" id="sobre">
+
+        <div id="sobre-box">
+
+            <h1 class="title-blue" id="sobre-title">Sobre o Projeto</h1>
+            <p class="sobre-text text-dark">O projeto de pesquisa Anima-INOS tem como objetivo a criação de livretos
+                Ilustrados para
+                o ensinamento de certos temas relacionados com Redes de Computadores, no momento estaremos produzindo o
+                primeiro livreto sobre Wi-Fi 6, onde terá dois personagens conversando sobre o tema em um podcast e os
+                explicando de forma que o leitor leia e compreenda.</p>
+            <p class="sobre-text text-dark">Futuramente será lançados mais alguns Livretos com temas diversificados, mas
+                todos terão
+                relação com a matéria de Redes de Computadores. Assim poderemos levar o conhecimento dos leitores além
+                daquilo que eles já possuem armazenado em seus cérebros, iremos introduzir o conhecimento em suas
+                mentes. Muito obrigado e aproveitem a leitura!</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="participantes">
+
+        <div id="participantes-box">
+
+            <h1 class="title-white" id="participantes-title">Participantes</h1>
+            <div id="participantes-card-root">
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <div id="footer-root"></div>
+
+    <div id="render_react_components"></div>
+
+
+
+    <script src="assets/javascript/components/particpantesCard.js" type="text/babel"></script>
+    <script src="assets/javascript/components/footer.js" type="text/babel"></script>
+    <script src="assets/javascript/components/navbar.js" type="text/babel"></script>
+
+</body>
+
+</html>
