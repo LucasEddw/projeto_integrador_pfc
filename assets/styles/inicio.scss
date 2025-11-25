@@ -1,3 +1,12 @@
+#landing-page {
+    background-image: url("../img/paginas/finalizado_capa.png");
+    width: 1365px;
+    height: 1891px;
+    position: fixed;
+    top: -103%;
+    z-index: -1;
+}
+
 #inicio {
     height: 460px;
     width: 100%;
@@ -5,7 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #525252;
+    background: rgba(0, 0, 0, 0.5);
 
     #banner-box {
         display: flex;
@@ -39,6 +48,7 @@
     align-items: center;
     width: 100%;
     padding: var(--body-margin-y) var(--body-margin-x) var(--body-margin-y) var(--body-margin-x);
+    background: white;
 
     #projeto-box {
         display: flex;
@@ -88,7 +98,7 @@
 
 
 #livreto {
-    background: var(--azul-205295);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: end;
     align-items: center;
@@ -137,7 +147,7 @@
                     display: flex;
                     flex-wrap: wrap;
                     place-content: center;
-                
+
 
                     &:hover {
                         transition: 0.3s;
@@ -176,9 +186,10 @@
 }
 
 @media (max-width: 900px) {
-    #livreto{
+    #livreto {
         justify-content: center;
-        #livreto-box{
+
+        #livreto-box {
             width: 100%;
         }
     }
@@ -187,6 +198,7 @@
 #sobre {
     padding: var(--body-margin-y) var(--body-margin-x) calc(var(--body-margin-y) + 2vw) var(--body-margin-x);
     width: 100%;
+    background: white;
 
     #sobre-box {
         display: flex;
@@ -207,7 +219,7 @@
 }
 
 #participantes {
-    background: #525252;
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     padding: var(--body-margin-y) var(--body-margin-x) calc(var(--body-margin-y) + 2vw) var(--body-margin-x);
 
@@ -255,7 +267,7 @@
                 height: 100%;
                 padding: 30px;
 
-                *{
+                * {
                     width: 100%;
                 }
 
@@ -286,4 +298,3 @@
         }
     }
 }
-

@@ -32,7 +32,7 @@ function criarComentarioElemento(comentario) {
     comentarioUser.classList.add('comment-user');
     
     let comentarioUserPfp = document.createElement('img');
-    comentarioUserPfp.src = '#';
+    comentarioUserPfp.src = 'assets/img/pfp.jpg';
     comentarioUserPfp.alt = 'foto-de-perfil';
     comentarioUser.appendChild(comentarioUserPfp);
 

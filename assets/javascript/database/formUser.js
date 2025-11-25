@@ -1,3 +1,9 @@
+var passwordInput;
+var passwordInputViewBtn;
+
+
+
+
 async function usuarioCadastrar() {
     let usuario = new Usuario(
         '',
@@ -63,4 +69,13 @@ async function darLikeForm() {
     } else {
         alert("Falha ao Comentar! Tente novamente.");
     }
+}
+
+window.onload = (e) => {
+    passwordInput = document.getElementById('card-password-input');
+    passwordInputViewBtn = document.getElementById('card-password-input-view');
+    passwordInputViewBtn.addEventListener('click', () => {
+        passwordInputViewBtn.classList.toggle('fa-lock-open');
+        passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    })
 }
