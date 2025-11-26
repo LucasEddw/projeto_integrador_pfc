@@ -205,7 +205,7 @@ $page-size-fullscren: 1;
             border-top: 5px solid var(--azul-20-205295) !important;
             background: transparent;
             border: none;
-            padding: 20px 23px;
+            padding: 20px 90px 20px 23px;
             outline: none;
             font-weight: 400;
             font-size: 16px;
@@ -279,10 +279,11 @@ $page-size-fullscren: 1;
         justify-content: start;
         align-items: center;
         width: 90%;
-        gap: 40px;
+        // gap: 40px;
 
         p {
             width: 100%;
+            word-wrap: break-word;
         }
 
         div {

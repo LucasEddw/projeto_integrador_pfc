@@ -17,11 +17,12 @@ function ParticipantesCard({ pfp, name, status, text }) {
 function CardBox() {
     return (
         <div id="participantes-card-box">
-            <ParticipantesCard pfp="#" name="Lucas Eduardo Benitez dos Santos" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Programador e artista." />
-            <ParticipantesCard pfp="#" name="Matheus Centenaro de Souza" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Roteirista e auxiliar de arte." />
-            <ParticipantesCard pfp="#" name="Gabriel Luiz Rech da Silva" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Roteirista e auxiliar de arte." />
-            <ParticipantesCard pfp="#" name="Sergio Ricardo Ferrazoli" status="Orientador" text="Orientador técnico do projeto, auxilia na parte técnica sobre redes de computadores." />
-            <ParticipantesCard pfp="#" name="Talita Mariele Bortilini" status="Coorientadora" text="Coorientadora do projeto, auxilia na produção textual, desenvolvimento de artigo e roteiro." />
+            <ParticipantesCard pfp="./assets/img/lucas.jpeg" name="Lucas Eduardo Benitez dos Santos" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Programador e artista." />
+            <ParticipantesCard pfp="./assets/img/matheus.jpeg" name="Matheus Centenaro de Souza" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Roteirista e auxiliar de arte." />
+            <ParticipantesCard pfp="./assets/img/gabriel.jpeg" name="Gabriel Luiz Rech da Silva" status="Aluno do 3º ano IFPR" text="Estudante do ensino médio. Roteirista e auxiliar de arte." />
+            <ParticipantesCard pfp="./assets/img/olavo.jpeg" name="Olavo José Luiz Junior" status="Orientador" text="Orientador do projeto. Roteirista original do enredo." />
+            <ParticipantesCard pfp="./assets/img/sergio.jpeg" name="Sergio Ricardo Ferrazoli" status="Orientador" text="Orientador técnico do projeto. Auxilia na parte técnica sobre redes de computadores." />
+            <ParticipantesCard pfp="./assets/img/talita.jpeg" name="Talita Mariele Bortilini" status="Coorientadora" text="Coorientadora do projeto. Auxilia na produção textual, desenvolvimento de artigo e roteiro." />
         </div>
     );
 }

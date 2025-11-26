@@ -170,7 +170,7 @@
   border-top: 5px solid var(--azul-20-205295) !important;
   background: transparent;
   border: none;
-  padding: 20px 23px;
+  padding: 20px 90px 20px 23px;
   outline: none;
   font-weight: 400;
   font-size: 16px;
@@ -236,10 +236,10 @@
   justify-content: start;
   align-items: center;
   width: 90%;
-  gap: 40px;
 }
 .comment .comment-content p {
   width: 100%;
+  word-wrap: break-word;
 }
 .comment .comment-content div {
   display: flex;

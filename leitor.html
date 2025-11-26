@@ -79,7 +79,7 @@
 
 
             </div>
-            <input class="comment-input" type="text" name="comment_input" id="comment_input"
+            <input maxlength="500" class="comment-input" type="text" name="comment_input" id="comment_input"
                 placeholder="Digite Aqui...">
             <button class="comment-send-btn" onclick="postarComentarioForm()"><i
                     class="fa-solid fa-chevron-right"></i></button>
@@ -112,7 +112,6 @@
 
         const paginas = [
             "assets/img/paginas/finalizado_capa.png",
-            "assets/img/paginas/finalizado_contra_capa.png",
             "assets/img/paginas/finalizado_pg_1.png",
             "assets/img/paginas/finalizado_pg_2.png",
             "assets/img/paginas/finalizado_pg_3.png",
@@ -123,6 +122,7 @@
             "assets/img/paginas/finalizado_pg_8.png",
             "assets/img/paginas/finalizado_pg_9.png",
             "assets/img/paginas/finalizado_pg_10.png",
+            "assets/img/paginas/finalizado_contra_capa.png"
         ];
 
         let indiceAtual = 0;
@@ -159,6 +159,7 @@
             });
         });
         })
+
     </script>
 </body>
 

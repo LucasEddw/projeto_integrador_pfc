@@ -93,6 +93,12 @@
   width: 100%;
   padding: var(--body-margin-y) var(--body-margin-x) calc(var(--body-margin-y) + 2vw) var(--body-margin-x);
 }
+#livreto .livreto-img {
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+  width: 600px;
+}
 #livreto #livreto-box {
   width: 40vw;
   margin-top: 80px;

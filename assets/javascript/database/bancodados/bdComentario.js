@@ -54,17 +54,17 @@ function criarComentarioElemento(comentario) {
     
     let comentarioContentLike = document.createElement('div');
 
-    let comentarioContentLikeIcon = document.createElement('i');
-    comentarioContentLikeIcon.classList.add('fa-regular');
-    comentarioContentLikeIcon.classList.add('fa-heart');
+    // let comentarioContentLikeIcon = document.createElement('i');
+    // comentarioContentLikeIcon.classList.add('fa-regular');
+    // comentarioContentLikeIcon.classList.add('fa-heart');
     
-    let comentarioContentLikeCount = document.createElement('span');
-    comentarioContentLikeCount.innerText = comentario.curtidas;
+    // let comentarioContentLikeCount = document.createElement('span');
+    // comentarioContentLikeCount.innerText = comentario.curtidas;
     
-    comentarioContentLike.appendChild(comentarioContentLikeIcon);
-    comentarioContentLike.appendChild(comentarioContentLikeCount);
+    // comentarioContentLike.appendChild(comentarioContentLikeIcon);
+    // comentarioContentLike.appendChild(comentarioContentLikeCount);
     comentarioContent.appendChild(comentarioContentTexto);
-    comentarioContent.appendChild(comentarioContentLike);
+    // comentarioContent.appendChild(comentarioContentLike);
     comentarioUser.appendChild(comentarioUserPfp);
     comentarioUser.appendChild(comentarioUserInfo);
     comentarioCard.appendChild(comentarioUser);

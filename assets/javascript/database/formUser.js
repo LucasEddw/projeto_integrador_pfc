@@ -40,36 +40,52 @@ async function usuarioEntrar() {
 }
 
 async function postarComentarioForm() {
-    let comentario = new Comentario(
-        '',
-        '',
-        document.getElementById('comment_input').value,
-        '0',
-        usuario.id
-    );
-    if (await postarComentario(comentario)) {
-        alert("Comentário postado com êxito!");
-        window.location.href = window.location.href.replace('leitor', 'leitor');
-    } else {
-        alert("Falha ao Comentar! Tente novamente.");
+
+    if (typeof usuario == "undefined") {
+        alert("Entre em uma conta para comentar.");
     }
+
+    if (confirm("Atenção! Esteja ciente de que comentar, o comentário será apagado ao enviar uma solicitação de remoção ao nosso email: inosanima@gmail.com")) {
+        let comentario = new Comentario(
+            '',
+            '',
+            document.getElementById('comment_input').value,
+            '0',
+            usuario.id
+        );
+        if (document.getElementById('comment_input').value.replaceAll(' ', '') == '') {
+            alert("Não é possível postar um comentário vazio.");
+            return
+        } if (await postarComentario(comentario)) {
+            alert("Comentário postado com êxito!");
+            window.location.href = window.location.href.replace('leitor', 'leitor');
+        } else {
+            alert("Falha ao Comentar! Tente novamente.");
+        }
+
+    } else {
+        document.getElementById('comment_input').value = '';
+        location.reload();
+    }
+
+
 }
 
-async function darLikeForm() {
-    let comentario = new Comentario(
-        '',
-        '',
-        document.getElementById('comment_input').value,
-        '0',
-        usuario.id
-    );
-    if (await postarComentario(comentario)) {
-        alert("Comentário postado com êxito!");
-        window.location.href = window.location.href.replace('leitor', 'leitor');
-    } else {
-        alert("Falha ao Comentar! Tente novamente.");
-    }
-}
+// async function darLikeForm() {
+//     let comentario = new Comentario(
+//         '',
+//         '',
+//         document.getElementById('comment_input').value,
+//         '0',
+//         usuario.id
+//     );
+//     if (await postarComentario(comentario)) {
+//         alert("Comentário postado com êxito!");
+//         window.location.href = window.location.href.replace('leitor', 'leitor');
+//     } else {
+//         alert("Falha ao Comentar! Tente novamente.");
+//     }
+// }
 
 window.onload = (e) => {
     passwordInput = document.getElementById('card-password-input');
@@ -79,3 +95,4 @@ window.onload = (e) => {
         passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     })
 }
+

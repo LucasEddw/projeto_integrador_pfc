@@ -7,6 +7,16 @@ body {
   height: 100vh;
 }
 
+#landing-page {
+  background-image: url("../img/paginas/finalizado_capa.png");
+  background-color: #000;
+  width: 1365px;
+  height: 1891px;
+  position: fixed;
+  top: -90%;
+  z-index: -1;
+}
+
 .btn-voltar {
   background: var(--azul-205295);
   color: #ffffff;
@@ -20,6 +30,7 @@ body {
   position: absolute;
   left: 70px;
   top: 35px;
+  z-index: 1;
 }
 .btn-voltar:hover i {
   width: 21px;
@@ -40,6 +51,7 @@ body {
   width: 400px;
   padding: 50px;
   transform: scale(1);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
 }
 .card .card-box-content {
   display: flex;
