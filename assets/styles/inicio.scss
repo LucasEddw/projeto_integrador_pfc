@@ -56,7 +56,7 @@
         align-items: start;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 7vw;
+        gap: 5vw;
 
         #projeto-text-box {
             display: flex;
@@ -81,7 +81,7 @@
             #projeto-img {
                 width: 268px;
                 height: 296px;
-                background: #aaa;
+                // background: #aaa;
             }
 
             #projeto-img-text {
@@ -90,6 +90,7 @@
                 letter-spacing: 0.5px;
                 color: var(--text-dark);
                 text-align: center;
+                margin-top: 8px;
             }
         }
     }
